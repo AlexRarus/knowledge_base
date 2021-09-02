@@ -1,5 +1,5 @@
 # Base docker-compose.yaml
-```shell
+```yaml
 # версия docker-compose
 version: '3.8'
 

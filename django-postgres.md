@@ -15,9 +15,15 @@ pip install django-environ
 Добавьте настройки в файл `settings.py`:
 ```python
 import environ
+import json
+
 
 env = environ.Env(DEBUG=(bool, False))
 env.read_env(env.str('../', '.env')) # если файл .env лежит на уровень выше
+
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
+ALLOWED_HOSTS = json.loads(env('ALLOWED_HOSTS'))
 
 DATABASES = {
     'default': {
@@ -39,6 +45,8 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 DB_HOST=db
 DB_PORT=5432
+SECRET_KEY="p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs"
+ALLOWED_HOSTS='["localhost", "127.0.0.1"]'
 ```
 Чтобы изменения вступили в силу — выполните миграции:
 ```shell

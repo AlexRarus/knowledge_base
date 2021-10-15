@@ -128,7 +128,7 @@ docker exec -it <CONTAINER ID> bash.
 ### Публикация образа в docker-hub
 Билд образа для публикации ТОЧКА В КОНЦЕ ОБЯЗАТЕЛЬНА
 ```shell
-docker build -t <USERNAME>/<REPOSITORY_NAME> .
+docker build -t <USERNAME>/<REPOSITORY_NAME>:latest .
 ```
 Логин в докер хабе
 ```shell
@@ -136,5 +136,5 @@ docker login
 ```
 Пуш образа
 ```shell
-docker <USERNAME>/<REPOSITORY_NAME>
+docker <USERNAME>/<REPOSITORY_NAME>:latest
 ```

@@ -136,5 +136,5 @@ docker login
 ```
 Пуш образа
 ```shell
-docker <USERNAME>/<REPOSITORY_NAME>:latest
+docker push <USERNAME>/<REPOSITORY_NAME>:latest
 ```
